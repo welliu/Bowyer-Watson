@@ -11,6 +11,7 @@ int main()
     PointArray p;
     double xx,yy,zz;
     int nodeSize;
+    /*
     for (int i=0;i<4;i++)//读入4外边框点
     {
         getline(infile,line);
@@ -18,6 +19,19 @@ int main()
         Point tmp={xx,yy,zz};
         p.push_back(tmp);
     }
+    */
+
+
+    double boundary[2]={0,500};
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            Point tmp={boundary[i],boundary[j],0.0};
+            p.push_back(tmp);
+        }
+    }
+
     Delaunay MyMesh(p[0],p[1],p[2],p[3]);//实例化Delaunay类
     getline(infile,line);//读入节点数，用于后面循环
     char *cstr;
